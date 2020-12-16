@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: 'Roboto', sans-serif;
+}
+
