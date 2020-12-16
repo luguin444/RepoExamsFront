@@ -7,7 +7,7 @@ export default function Home () {
 
     return (
         <MainContainer >
-            <StyledLink to = '/' >View Exams</StyledLink>
+            <StyledLink to = '/posting' >View Exams</StyledLink>
             <StyledLink to = '/searching' >Post new Exam </StyledLink>
         </MainContainer> 
     );
