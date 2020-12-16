@@ -25,6 +25,7 @@
     "start": "node server.js",
     "build": "npx webpack --mode production",
     "dev": "npx webpack serve",
+    "deploy": "git push heroku main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
