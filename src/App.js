@@ -5,6 +5,7 @@ import Home from './pages/Home/index';
 import SearchExams from './pages/SearchExams/index';
 import PostExam from './pages/PostExam/index';
 import ListProfessor from './pages/ListProfessor/index';
+import ProfessorPage from './pages/ProfessorPage/index';
 
 
 export default function App () {
@@ -21,6 +22,9 @@ export default function App () {
                   </Route>
                   <Route path='/busca/professores' exact >
                         <ListProfessor />
+                  </Route>
+                  <Route path='/busca/professores/:id' exact >
+                        <ProfessorPage />
                   </Route>
                   <Route path='/postar' exact >
                         <PostExam />
