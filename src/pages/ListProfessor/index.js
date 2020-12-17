@@ -1,14 +1,42 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
 
-import {MainContainer} from '../../components/MainContainer'
-import {StyledLink} from '../../components/StyledLink'
+import {Container, H1, List, Item, Title} from './styles'
+import { useHistory } from 'react-router';
 
 export default function ListProfessor () {
 
+    const history = useHistory();
+
+    const [professors, setProfessors] = useState([]);
+
+    useEffect(() => {
+        const promise = axios.get('http://localhost:3000/list-professors'); 
+        promise.then( (res) => {
+            setProfessors(res.data);
+        }).catch(e => {
+            alert('Erro ao obter professores')
+            history.push('/');
+        })
+    }, []);
+
     return (
-        <MainContainer >
-            <StyledLink to = '/'>Em breve</StyledLink>
-            <StyledLink  to = '/'>Em breve</StyledLink>
-        </MainContainer> 
+            <Container>
+                <H1>LISTA DE PROFESSORES</H1>
+                <List>
+                    <Title>
+                        <h3 className = "title"> Nome </h3>
+                        <h3 className = "title"> Provas </h3>
+                    </Title>
+                    { professors.map( p => {
+                        return( 
+                            <Item key = {p.id} onClick = {() => history.push(`/busca/professores/${p.id}`)}>
+                                <span > {p.name}</span>
+                                <span > {p.numberOfExams} </span>
+                            </Item>
+                        );
+                    })}
+                </List>
+            </Container>
     );
 }
