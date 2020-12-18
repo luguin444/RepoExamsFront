@@ -5,7 +5,6 @@ import { useHistory, useParams } from 'react-router';
 import { Container, H1} from '../ListProfessor/styles'
 import {WrapperList, Title} from './styles'
 import List from '../../components/List'
-import { func } from 'prop-types';
 
 export default function ProfessorPage () {
 
@@ -38,7 +37,6 @@ export default function ProfessorPage () {
         setSecondCallExams ( exams.filter(e => e.categorie === '2chamada') );
         setOthersExams( exams.filter(e => e.categorie === 'Outras') );
     }
-
 
     return (
         <Container>
