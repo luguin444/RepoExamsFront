@@ -20,7 +20,7 @@ export default function ProfessorPage () {
 
     useEffect( () => {
         // const promise = axios.get(`http://localhost:3000/professor/${id}`);
-        const promise = axios.get(`https://repo-exams-front.herokuapp.com/professor/${id}`);
+        const promise = axios.get(`https://repo-exams-api.herokuapp.com/professor/${id}`);
         promise.then( (res) => {
             setProfessor(res.data);
             separateCategoriesOfExams(res.data.exams)

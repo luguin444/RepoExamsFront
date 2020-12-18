@@ -12,7 +12,7 @@ export default function ListSubjects () {
 
     useEffect(() => {
         // const promise = axios.get('http://localhost:3000/list-subjects'); 
-        const promise = axios.get('https://repo-exams-front.herokuapp.com/list-subjects');
+        const promise = axios.get('https://repo-exams-api.herokuapp.com/list-subjects');
         promise.then( (res) => {
             setSubjects(res.data);
         }).catch(e => {

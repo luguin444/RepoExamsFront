@@ -12,7 +12,7 @@ export default function ListProfessor () {
 
     useEffect(() => {
         // const promise = axios.get('http://localhost:3000/list-professors');
-        const promise = axios.get('https://repo-exams-front.herokuapp.com/list-professors');
+        const promise = axios.get('https://repo-exams-api.herokuapp.com/list-professors');
         promise.then( (res) => {
             setProfessors(res.data);
         }).catch(e => {

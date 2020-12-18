@@ -20,7 +20,7 @@ export default function SubjectPage () {
 
     useEffect( () => {
         // const promise = axios.get(`http://localhost:3000/subject/${id}`);
-        const promise = axios.get(`https://repo-exams-front.herokuapp.com/subject/${id}`);
+        const promise = axios.get(`https://repo-exams-api.herokuapp.com/subject/${id}`);
         promise.then( (res) => {
             setSubject(res.data);
             separateCategoriesOfExams(res.data.exams)
