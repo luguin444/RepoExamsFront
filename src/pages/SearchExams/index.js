@@ -8,7 +8,7 @@ export default function SearchExams () {
     return (
         <MainContainer >
             <StyledLink to = '/busca/professores'> Procurar por professores </StyledLink>
-            <StyledLink  to = '/'> Em breve por disciplinas </StyledLink>
+            <StyledLink  to = '/busca/disciplinas'> Procurar por disciplinas </StyledLink>
         </MainContainer> 
     );
 }
