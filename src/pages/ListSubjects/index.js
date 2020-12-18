@@ -11,7 +11,8 @@ export default function ListSubjects () {
     const [subjects, setSubjects] = useState([]);
 
     useEffect(() => {
-        const promise = axios.get('http://localhost:3000/list-subjects'); 
+        // const promise = axios.get('http://localhost:3000/list-subjects'); 
+        const promise = axios.get('https://repo-exams-front.herokuapp.com/list-subjects');
         promise.then( (res) => {
             setSubjects(res.data);
         }).catch(e => {

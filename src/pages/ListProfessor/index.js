@@ -11,7 +11,8 @@ export default function ListProfessor () {
     const [professors, setProfessors] = useState([]);
 
     useEffect(() => {
-        const promise = axios.get('http://localhost:3000/list-professors'); 
+        // const promise = axios.get('http://localhost:3000/list-professors');
+        const promise = axios.get('https://repo-exams-front.herokuapp.com/list-professors');
         promise.then( (res) => {
             setProfessors(res.data);
         }).catch(e => {

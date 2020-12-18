@@ -19,7 +19,8 @@ export default function SubjectPage () {
     const [othersExams, setOthersExams] = useState([]);
 
     useEffect( () => {
-        const promise = axios.get(`http://localhost:3000/subject/${id}`); 
+        // const promise = axios.get(`http://localhost:3000/subject/${id}`);
+        const promise = axios.get(`https://repo-exams-front.herokuapp.com/subject/${id}`);
         promise.then( (res) => {
             setSubject(res.data);
             separateCategoriesOfExams(res.data.exams)

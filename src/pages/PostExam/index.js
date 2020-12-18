@@ -24,7 +24,8 @@ export default function PostExam () {
     const [linkPDF, setLinkPDF] = useState('');
 
     useEffect(() => {
-        const promise = axios.get('http://localhost:3000/list-subjects'); 
+        // const promise = axios.get('http://localhost:3000/list-subjects');
+        const promise = axios.get('https://repo-exams-front.herokuapp.com/list-subjects');
         promise.then( (res) => {
             setSubjects(res.data);
             setSubject(res.data[0].name);
@@ -38,7 +39,8 @@ export default function PostExam () {
 
         const chosenSubject = subjects.find( s => s.name === subject);
         if (chosenSubject) {
-            const promise = axios.get(`http://localhost:3000/professors/${chosenSubject.id}`); 
+            // const promise = axios.get(`http://localhost:3000/professors/${chosenSubject.id}`);
+            const promise = axios.get(`https://repo-exams-front.herokuapp.com/professors/${chosenSubject.id}`);
             promise.then( (res) => {
                 setProfessors(res.data);
                 setProfessor(res.data[0]);
@@ -60,7 +62,8 @@ export default function PostExam () {
 
         const body = {name, categorie, subject, professor, "link": linkPDF };
 
-        const promise = axios.post('http://localhost:3000/new-exam', body); 
+        // const promise = axios.post('http://localhost:3000/new-exam', body); 
+        const promise = axios.post('https://repo-exams-front.herokuapp.com/new-exam', body);
         promise.then( (res) => {
             setIsPosting(false);
             console.log(res.data);
@@ -78,7 +81,7 @@ export default function PostExam () {
         <MainContainer >
             <Form onSubmit = {onSubmit}>
                 <input 
-                    placeholder = "Nome - Ano.semestre - 2020.1" 
+                    placeholder = "Nome - Ano.semestre - EX: 2020.1" 
                     onChange = {(e) => setName(e.target.value)} 
                     value = {name} 
                     type = "text"
