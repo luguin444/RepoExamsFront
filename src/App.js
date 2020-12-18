@@ -43,5 +43,3 @@ export default function App () {
           </>
     );
 }
-
-//https://repo-exams-front.herokuapp.com/
