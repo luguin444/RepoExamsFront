@@ -12,9 +12,8 @@ export default function List (props) {
     if (items.length === 0) return <StyledList> <li> Nenhuma prova </li> </StyledList>
 
     return (
-        <StyledList> 
-            
-            { items.map( i => <li onClick = {() => redirectToTheExamPage(i.link)}>{`${i.name} - ${i.subject}`}</li> )}
+        <StyledList>       
+            { items.map( i => <li key = {i.id} onClick = {() => redirectToTheExamPage(i.link)}>{`${i.name} - ${i.subject || i.professor}`}</li> )}
         </StyledList>
     );
 }
@@ -25,9 +24,14 @@ const StyledList = styled.ul`
 
     li{
         color: #fff;
-        padding-left: 0.7rem;
         margin-top: 0.7rem;
         font-size: 1.3rem;
         cursor: pointer;
+        text-align: center;
+
+        @media (max-width: 600px) {
+            text-align: initial;
+            padding-left: 0.7rem;
+        }
     }
 `
