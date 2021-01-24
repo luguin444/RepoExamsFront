@@ -6,9 +6,10 @@ Descrição: MPV para reprensentar um possível repositório para provas antigas
 
 # Features
  [] postar provas;
+ 
  [] Visualizar provas antigas, filtrando por professores e disciplinas; 
 
 # Próximas melhorias
-[] Aceitar arquivo em vez do link da prova;
+[] Aceitar arquivo em vez do link da prova;7
+
 [] Inserir novas disciplinas e cursos;
-# 14-repo-provas-front
